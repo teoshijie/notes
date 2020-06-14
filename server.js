@@ -6,6 +6,10 @@ const PORT = 3000;
 
 const data = require('./models/data')
 
+const apple = [ {
+    
+}]
+
 // middleware
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
