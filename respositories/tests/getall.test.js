@@ -1,8 +1,8 @@
 const {expect} = require('chai');
-const moneyrepo = require('../moneyrepo')
+const moneyRepo = require('../moneyRepo')
 const db= require('../../db');
 
-describe('moneyrepo.getAll', () => {
+describe('moneyRepo.getAll', () => {
     beforeAll( async () => {
         await db.connect();
     });
@@ -12,8 +12,14 @@ describe('moneyrepo.getAll', () => {
     });
 
     it ('it should return an array', async () => {
-        const expenses = await moneyrepo.getAll();
-        expect (expenses).to.be.an('array')
+        const data = await moneyRepo.getAll();
+        expect(data).to.be.an('array')
+    })
+
+    it ('the first item should have the name Beans', async () => {
+        const data = await moneyRepo.getAll();
+        const beans= data.find(items => items.name === 'Beans' ) 
+        expect(beans.name).to.equal('Beans')
     })
 });
 

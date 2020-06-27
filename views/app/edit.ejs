@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../partials/head.ejs') %>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="header">
+      <img src=<%= images[Math.floor(Math.random()*Object.keys(images).length)].img %>>
+      <div class="centered">
+        <h2>Edit your thoughts</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <form action="/<%= data.title%>?_method=PUT" method="POST" class="col s12">
+        <div class="input-field col s12">
+          <input id="title" type="text" name="title" class="validate" value= "<%= data.title%>">
+          <label for="title">Title</label>
+        </div>
+        <div class="input-field col s12">
+          <textarea id="data" name="data" type="text" class="materialize-textarea" data-length="500" value= "<%= data.data%>"></textarea>
+          <label for="data">Text Area</label>
+        </div>
+        <div class="input-field col s12">
+
+          <input type="submit" value="Add">
+        </div>
+
+      </form>
+    </div>
+
+
+  </div>
+
+
+</body>
+
+</html>
