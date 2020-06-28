@@ -14,16 +14,19 @@ module.exports = app => {
     app.get('/users/new', usersController.newForm)
     app.get('/users/success', usersController.success)
     app.post('/users', usersController.create)  
+
     // app.post('/users', usersController.create)  
 
     // app.get('/mynotes', usersController.getAll)
 
-    
-    app.get('/new', controller.new)
-    app.get('/:name/edit', controller.getOneByName)
-    app.post('/mynotes', controller.create)
-    app.put('/:name/edit', controller.update)
+    // app.delete('/mynotes/:index', controller.destroy)
     app.get('/mynotes', controller.getAll)
+    app.get('/mynotes/:_id/edit', controller.edit)
+    app.get('/mynotes/:_id/', controller.getOneByName)
+    app.put('/mynotes/:_id/', controller.update)
+    app.delete('/mynotes/:_id', controller.destroy);
+    app.get('/new', controller.new)
+    app.post('/mynotes', controller.create)
 
   
     

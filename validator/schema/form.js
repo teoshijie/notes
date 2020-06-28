@@ -8,6 +8,9 @@ module.exports ={
         data: {
             type: 'string'
         },
+        _id: {
+            type: 'string'
+        },
         createdAt: {
             type: 'string',
             format: 'date-time'

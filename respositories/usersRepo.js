@@ -44,25 +44,5 @@ module.exports = {
         }
     },
 
-    async delete(username, data) {
-        try {
-            const updatedItem = await db.users.updateOne({
-                username:
-                    username
-
-            },
-                {
-                    $pull: {
-                        entries: {
-                                     title: data.title,//pull by index
-                                    }
-                            }
-                    }
-                )
-            return updatedItem
-        } catch (err) {
-            throw new Error(`Due to ${err.message}`);
-        }
-    }
-
+   
 }

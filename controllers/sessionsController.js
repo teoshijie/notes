@@ -8,7 +8,6 @@ module.exports= {
     async create(req,res){
         try{
             const user = await userRepo.find(req.body.username);
-            console.log(user)
             if(bcrypt.compareSync(req.body.password, user.password)) {
                 req.session.currentUser = user;
                 return res.redirect('/mynotes');

@@ -15,8 +15,6 @@ describe('create()', () => {
         const data = await moneyRepo.create({
             'title': 'shijie',
             'data': 'helloworld',
-            'createdAt': new Date(),
-            'updatedAt': new Date()
         });
      expect(data.insertedCount).to.equal(1);
     //  const item = await moneyRepo.getOneByName('shijie');

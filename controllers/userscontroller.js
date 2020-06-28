@@ -22,29 +22,27 @@ module.exports = {
     success(req, res) {
         res.render('users/success')
     },
-    async getAll(req, res) {
-        if(req.session.currentUser){
-            try{
-                const user = req.session.currentUser
-                console.log(user.username)
-                const data = await usersRepo.get(user.username);
-                console.log(data)
-                res.render('app/index.ejs', { data, images })
-            }catch(err){
-                return res.send(err.message)
-            }
-        } else {
-            res.redirect('/')
-        }
+    // async getAll(req, res) {
+    //     if(req.session.currentUser){
+    //         try{
+    //             const user = req.session.currentUser
+    //             const data = await usersRepo.get(user.username);
+    //             res.render('app/index.ejs', { data, images })
+    //         }catch(err){
+    //             return res.send(err.message)
+    //         }
+    //     } else {
+    //         res.redirect('/')
+    //     }
        
-    },
+    // },
     // async delete(req, res) {
     //     try {
-    //         const user = req.session.currentUser
-    //         console.log(user.username)
-    //         const data = await usersRepo.find(user.username);
-    //         usersRepo.delete(data[req.params.index].title)
-         
+    //         // const user = req.session.currentUser
+    //         // console.log(user.username)
+    //         // const data = await usersRepo.find(user.username);
+    //         // usersRepo.delete(data[req.params.index].title)
+    //         // db.notes
     //         res.render('app/index.ejs', { data, images })
     //     }
     // }
