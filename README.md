@@ -11,6 +11,9 @@ Notes is a note taking app that helps user record their thoughts on the go. It i
 
 The objective is to create an app with login authentication and to have full CRUD operations. 
 
+# Application link:
+https://takenotesg.herokuapp.com/
+
 # Accomplishments 
 
 I have a much better understanding of the overall backend structure. During earlier parts of this unit, I follow the instructions in the notes to write my code without fuly understanding what each lines of code means. After this project, I have a better understanding like when to use req.params, req.body, req.sesssions and how routes are name the way they are. 
